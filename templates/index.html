@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thought Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="chat-container">
+    <h2>Thought Expression Chatbot</h2>
+
+    <div id="chatbox"></div>
+
+    <input id="userInput" type="text" placeholder="Type your thoughts...">
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+function sendMessage() {
+    let msg = document.getElementById("userInput").value;
+
+    fetch("/get", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "msg=" + msg
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("chatbox").innerHTML +=
+            "<p><b>You:</b> " + msg + "</p>" +
+            "<p><b>Bot:</b> " + data + "</p>";
+
+        document.getElementById("userInput").value = "";
+    });
+}
+</script>
+
+</body>
+</html>
