@@ -20,7 +20,7 @@ A simple chatbot that allows users to express their thoughts and emotions throug
 
 ## GitHub Repository
 
-[View Project Repository](https://github.com/firthous2307-blip/thought-expression-chatbot)
+GitHub: https://github.com/firthous2307-blip/thought-expression-chatbot
 
 ## Project Status
 Currently Developing
